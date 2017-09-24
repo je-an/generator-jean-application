@@ -1,0 +1,19 @@
+{
+    "name": "<%= name %>",
+    "version": "0.0.0",
+    "description": "<%= description %>",
+    "main": "index.js",
+    "scripts": {
+        
+    },
+    "keywords": [],
+    "author": "Jeremias Andris",
+    "license": "MIT",
+    "dependencies": {
+        "requirejs": "^2.3.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/je-an/<%= name %>.git"
+    }
+}
