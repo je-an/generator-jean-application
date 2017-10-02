@@ -78,7 +78,7 @@ module.exports = class extends Generator {
     );
     this.fs.copyTpl(
       this.templatePath('_require.config.js'),
-      this.destinationPath(path + '/require.configs.js'),
+      this.destinationPath(path + '/require.config.js'),
       args
     );
     var elementDir = process.cwd() + '/' + path;
