@@ -25,20 +25,20 @@ module.exports = function (grunt) {
                     { cwd: "img", expand: true, src: ['**'], dest: 'build-<%= name %>/debug/assets/img' },
                     { cwd: "lib/GeoserverTerrainProvider", expand: true, src: ['GeoserverTerrainProvider.js'], dest: 'build-<%= name %>/debug/assets/GeoserverTerrainProvider' },
                     { cwd: "node_modules/cesium/Build/CesiumUnminified", expand: true, src: ['**'], dest: 'build-<%= name %>/debug/assets/Cesium' },
-                    { cwd: "", expand: true, src: ['favicon.ico'], dest: 'build<%= name %>/debug' }
+                    { cwd: "", expand: true, src: ['favicon.ico'], dest: 'build-<%= name %>/debug' }
                 ],
             },
             release: {
                 files: [
-                    { cwd: "img", expand: true, src: ['**'], dest: 'build<%= name %>/release/assets/img' },
-                    { cwd: "lib/GeoserverTerrainProvider", expand: true, src: ['GeoserverTerrainProvider.js'], dest: 'build<%= name %>/release/assets/GeoserverTerrainProvider' },
-                    { cwd: "node_modules/cesium/Build/CesiumUnminified", expand: true, src: ['**'], dest: 'build<%= name %>/release/assets/Cesium' },
-                    { cwd: "", expand: true, src: ['favicon.ico'], dest: 'build<%= name %>/release' }
+                    { cwd: "img", expand: true, src: ['**'], dest: 'build-<%= name %>/release/assets/img' },
+                    { cwd: "lib/GeoserverTerrainProvider", expand: true, src: ['GeoserverTerrainProvider.js'], dest: 'build-<%= name %>/release/assets/GeoserverTerrainProvider' },
+                    { cwd: "node_modules/cesium/Build/CesiumUnminified", expand: true, src: ['**'], dest: 'build-<%= name %>/release/assets/Cesium' },
+                    { cwd: "", expand: true, src: ['favicon.ico'], dest: 'build-<%= name %>/release' }
                 ],
             },
             integration: {
                 files: [
-                    { cwd: "build<%= name %>/release", expand: true, src: ['**'], dest: 'C:/Node_Web_Server/app/<%= title %>' },
+                    { cwd: "build-<%= name %>/release", expand: true, src: ['**'], dest: 'C:/Node_Web_Server/app/<%= title %>' },
                 ],
             }
         },
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
                     baseUrl: './',
                     mainConfigFile: 'require.config.js',
                     include: ['index.js',  'node_modules/jean-amd/dist/jean-amd'],
-                    out: 'build<%= name %>/debug/index.js',
+                    out: 'build-<%= name %>/debug/index.js',
                     optimize: "none",
                     done: function (done, output) { // jscs:ignore
                         console.log(output);
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
                     baseUrl: './',
                     mainConfigFile: 'require.config.js',
                     include: ['index.js', 'node_modules/jean-amd/dist/jean-amd'],
-                    out: 'build<%= name %>/release/index.js',
+                    out: 'build-<%= name %>/release/index.js',
                     optimize: "uglify2",
                     done: function (done, output) { // jscs:ignore
                         console.log(output);
@@ -75,12 +75,12 @@ module.exports = function (grunt) {
         processhtml: {
             debug: {
                 files: {
-                    "build<%= name %>/debug/index.html": ["index.html"]
+                    "build-<%= name %>/debug/index.html": ["index.html"]
                 }
             },
             release: {
                 files: {
-                    "build<%= name %>/release/index.html": ["index.html"]
+                    "build-<%= name %>/release/index.html": ["index.html"]
 
                 }
             },
@@ -105,11 +105,11 @@ module.exports = function (grunt) {
         },
         json_generator: {
             debug: {
-                dest: "build<%= name %>/release/version.json",
+                dest: "build-<%= name %>/release/version.json",
                 options: version
             },
             release: {
-                dest: "build<%= name %>/debug/version.json",
+                dest: "build-<%= name %>/debug/version.json",
                 options: version
             }
         }
