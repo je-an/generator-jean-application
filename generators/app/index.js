@@ -81,6 +81,16 @@ module.exports = class extends Generator {
       this.destinationPath(path + '/require.config.js'),
       args
     );
+    this.fs.copyTpl(
+      this.templatePath('_gruntfile.js'),
+      this.destinationPath(path + '/gruntfile.js'),
+      args
+    );
+    this.fs.copyTpl(
+      this.templatePath('_options.json'),
+      this.destinationPath(path + '/options.json'),
+      args
+    );
     var elementDir = process.cwd() + '/' + path;
     process.chdir(elementDir)
     this.installDependencies({
