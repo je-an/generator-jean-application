@@ -47,7 +47,7 @@ module.exports = function (grunt) {
                 options: {
                     baseUrl: './',
                     mainConfigFile: 'require.config.js',
-                    include: ['index.js',  'node_modules/jean-amd/dist/jean-amd'],
+                    include: ['index.js', 'node_modules/jean-amd/dist/jean-amd'],
                     out: 'build-<%= name %>/debug/index.js',
                     optimize: "none",
                     done: function (done, output) { // jscs:ignore
@@ -118,11 +118,11 @@ module.exports = function (grunt) {
         "clean:before",
         "copy:debug",
         "copy:release",
-         "create_config_before",
+        "create_config_before",
         "requirejs:compileDebug",
         "requirejs:compileRelease",
         "create_config_after",
-       "processhtml:debug",
+        "processhtml:debug",
         "processhtml:release",
         "json_generator",
         "copy:integration"
